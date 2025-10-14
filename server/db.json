@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "22dbc87f-d137-4835-8c5d-9d4f8b6e89b8",
+      "username": "manufacturer",
+      "password_hash": "$2a$08$voKdK4L9iFwdpUb8jOKj9.FrRgZujQEoWQg5CptJtYQqtP1NgYgpi",
+      "role": "manufacturer",
+      "display_name": "Manufacturer",
+      "created_at": 1760371730220
+    },
+    {
+      "id": "f3d556fe-1474-496c-9217-017fd4a809e9",
+      "username": "vendor",
+      "password_hash": "$2a$08$Kh3KfUf3Sf14/1aPU0tsGOyXbEowl9bj1QIEh9T/bgo6j..X9bF7G",
+      "role": "vendor",
+      "display_name": "Vendor",
+      "created_at": 1760371730220
+    },
+    {
+      "id": "a5990a08-0477-456a-a3eb-b5be116db2a2",
+      "username": "fdvs",
+      "password_hash": "$2a$08$SCVRrIf4tAd95ohblOERzezma8PVZbZrPUo26vjRzhWIjhj7UT0Dy",
+      "role": "manufacturer",
+      "display_name": "dszd",
+      "created_at": 1760456715060
+    },
+    {
+      "id": "6443d7fa-9e2e-4b2d-96f2-62142be41edf",
+      "username": "fd",
+      "password_hash": "$2a$08$BWdjFlVKoQZ8bmIlgXZLDujc7YHErjz99Ffl4nESobjMvNm/6pek6",
+      "role": "vendor",
+      "display_name": "df",
+      "created_at": 1760456758085
+    },
+    {
+      "id": "c65e008f-1183-43f5-ac6c-7f33cfb40e32",
+      "username": "bhavs",
+      "password_hash": "$2a$08$Aorc9KT0E1.c9ATV7tVdMOPMEPTgpcdvx591xt2c1qLhTBtosmTZe",
+      "role": "manufacturer",
+      "display_name": "bhavana",
+      "created_at": 1760457695619
+    },
+    {
+      "id": "7d331ab1-af2f-44bf-b4f7-a685f0562ba0",
+      "username": "tej",
+      "password_hash": "$2a$08$gmLs/RXbga5sK3DsBf9a2u3d4DYmOpFJCwacXGzyKbEX8SA5aTDma",
+      "role": "manufacturer",
+      "display_name": "teju",
+      "created_at": 1760457752640
+    }
+  ]
+}

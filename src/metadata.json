@@ -1,0 +1,5 @@
+{
+  "name": "Intelligent Production Management System",
+  "description": "An advanced real-time production management system using AI-driven insights from Gemini. Monitor live KPIs, detect anomalies, perform root cause analysis, and simulate market strategies to optimize production and market position.",
+  "requestFramePermissions": []
+}
