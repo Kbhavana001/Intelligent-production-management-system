@@ -1,0 +1,9 @@
+/* Minimal global styles for dev */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+.p-6 { padding: 1.5rem; }

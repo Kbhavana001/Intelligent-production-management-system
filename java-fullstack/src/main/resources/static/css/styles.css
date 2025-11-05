@@ -1,0 +1,14 @@
+:root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#3b82f6}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:#e6eef8;margin:0}
+.container{max-width:1200px;margin:0 auto;padding:24px}
+.app-header{display:flex;align-items:center;gap:12px;padding:12px 0}
+.card{background:var(--card);padding:24px;border-radius:8px}
+.login .card{max-width:600px;margin:60px auto;text-align:center}
+.btn-row{display:flex;gap:12px;justify-content:center}
+.btn-row button{padding:12px 18px;border-radius:8px;border:none;background:var(--accent);color:white;cursor:pointer}
+.kpis{display:flex;gap:16px;margin-bottom:18px}
+.kpi{background:var(--card);padding:16px;border-radius:8px;flex:1}
+.data-table{width:100%;border-collapse:collapse}
+.data-table th,.data-table td{padding:8px;border-bottom:1px solid #18202b}
+.charts{background:var(--card);padding:16px;border-radius:8px;margin-bottom:18px}
+.app-footer{margin-top:28px;color:var(--muted);font-size:13px}

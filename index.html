@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intelligent Production Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'gray-900': '#121212',
+              'gray-800': '#1E1E1E',
+              'gray-700': '#2D2D2D',
+              'gray-600': '#3C3C3C',
+              'gray-400': '#A0AEC0',
+              'gray-200': '#E2E8F0',
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      }
+    </script>
+  
+</head>
+  <body class="bg-gray-900 text-gray-200">
+    <!-- Temporary dev indicator to help confirm the app is being served -->
+    <div id="dev-indicator" style="position:fixed;top:8px;right:8px;background:#f6e05e;color:#1a202c;padding:6px 8px;border-radius:6px;z-index:9999;font-size:12px;font-weight:600">DEV: app served</div>
+    <div id="root"></div>
+    <!-- Dev server probe: if the JS module isn't loading from this origin,
+         probe nearby ports for a running Vite server and show a link. -->
+    <script>
+      (function(){
+        // Only run this probe in development / when viewing on localhost
+        if (!location.hostname.startsWith('localhost') && location.hostname !== '127.0.0.1') return;
+        // avoid redirect loops in the same session
+        if (sessionStorage.getItem('vite_dev_redirected')) return;
+
+        function showBanner(port){
+          var existing = document.getElementById('dev-server-banner');
+          if (existing) return;
+          var a = document.createElement('a');
+          a.id = 'dev-server-banner';
+          a.textContent = 'Dev server detected at http://localhost:' + port + ' — click to open';
+          a.href = 'http://localhost:' + port + '/';
+          a.target = '_blank';
+          a.style.position = 'fixed';
+          a.style.left = '8px';
+          a.style.top = '8px';
+          a.style.background = '#3182ce';
+          a.style.color = '#fff';
+          a.style.padding = '6px 10px';
+          a.style.borderRadius = '6px';
+          a.style.zIndex = 9999;
+          a.style.fontSize = '13px';
+          a.style.textDecoration = 'none';
+          document.body.appendChild(a);
+        }
+
+        // Try to detect a working dev server on nearby ports and auto-redirect once
+        var start = 3000, end = 3010;
+        for (let p = start; p <= end; p++){
+          (function(port){
+            var ifr = document.createElement('iframe');
+            ifr.style.display = 'none';
+            ifr.src = 'http://localhost:' + port + '/vite'; // request a Vite-specific path to increase likelihood of success
+            // onload indicates a response — redirect if it's a different port
+            ifr.onload = function(){
+              try{ document.body.removeChild(ifr); } catch(e){}
+              if (location.port !== String(port)){
+                sessionStorage.setItem('vite_dev_redirected', '1');
+                // small delay to allow the current script to finish
+                setTimeout(function(){ location.href = 'http://localhost:' + port + '/'; }, 50);
+              } else {
+                // if same port, ensure the banner is visible
+                showBanner(port);
+              }
+            };
+            ifr.onerror = function(){ try{ document.body.removeChild(ifr); } catch(e){} };
+            document.body.appendChild(ifr);
+          })(p);
+        }
+      })();
+    </script>
+  <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
