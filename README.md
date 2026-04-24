@@ -1,328 +1,221 @@
-# Intelligent Production Management System# React + TypeScript + Vite
-
-
-
-An advanced real-time production management system powered by AI-driven insights from Google Gemini. Monitor live KPIs, detect anomalies, perform root cause analysis, and simulate market strategies to optimize production and market position.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-
-
-![System Overview](https://img.shields.io/badge/Status-Production%20Ready-green)Currently, two official plugins are available:
-
-![React](https://img.shields.io/badge/React-18.x-blue)
-
-![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-blue)- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-![Node.js](https://img.shields.io/badge/Node.js-20.x-green)
-
-## Expanding the ESLint configuration
-
-## 🌟 Features
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-### AI-Powered Analytics
-
-- **Anomaly Detection**: Real-time detection of unusual patterns in production data using Google Gemini```js
-
-- **Root Cause Analysis**: AI-driven insights to identify the underlying causes of performance issuesexport default defineConfig([
-
-- **Predictive Analytics**: Forecast production trends and potential issues before they occur  globalIgnores(['dist']),
-
-  {
-
-### Production Monitoring    files: ['**/*.{ts,tsx}'],
-
-- **Real-time KPI Dashboard**: Live monitoring of key performance indicators    extends: [
-
-- **Interactive Data Visualization**: Beautiful charts and graphs using Recharts      // Other configs...
-
-- **Multi-role Access**: Separate dashboards for manufacturers and vendors
-
-      // Remove tseslint.configs.recommended and replace with this
-
-### Advanced Capabilities      tseslint.configs.recommendedTypeChecked,
-
-- **Sentiment Analysis**: Analyze customer feedback and vendor communications      // Alternatively, use this for stricter rules
-
-- **Price Simulation**: Predict market impact of pricing changes      tseslint.configs.stylisticTypeChecked,
-
-- **Competitive Analysis**: Track competitor pricing and market share
-
-- **Sustainability Metrics**: Monitor energy usage and environmental impact      // Other configs...
-
-    ],
-
-### Modern Tech Stack    languageOptions: {
-
-- **Frontend**: React 18 + TypeScript + Tailwind CSS      parserOptions: {
-
-- **Backend**: Node.js + Express + Authentication        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-
-- **Database**: SQLite (development) / MySQL (production)        tsconfigRootDir: import.meta.dirname,
-
-- **AI Integration**: Google Gemini API      },
-
-- **Charts**: Recharts for interactive data visualization      // other options...
-
-    },
-
-## 🚀 Quick Start  },
-
-])
-
-### Prerequisites```
-
-- Node.js 18+ and npm
-
-- Google Gemini API keyYou can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-- Git
-
-```js
-
-### Installation// eslint.config.js
-
-import reactX from 'eslint-plugin-react-x'
-
-1. **Clone the repository**import reactDom from 'eslint-plugin-react-dom'
-
-   ```bash
-
-   git clone https://github.com/Kbhavana001/Intelligent-production-management-system.gitexport default defineConfig([
-
-   cd intelligent-production-system  globalIgnores(['dist']),
-
-   ```  {
-
-    files: ['**/*.{ts,tsx}'],
-
-2. **Install dependencies**    extends: [
-
-   ```bash      // Other configs...
-
-   # Install frontend dependencies      // Enable lint rules for React
-
-   npm install      reactX.configs['recommended-typescript'],
-
-      // Enable lint rules for React DOM
-
-   # Install backend dependencies      reactDom.configs.recommended,
-
-   cd server    ],
-
-   npm install    ## Local auth demo
-
-   cd ..
-
-   ```    This project includes a small demo auth server under `server/` which you can run locally for development.
-
-
-
-3. **Environment Setup**    - Change into the server folder and install dependencies:
-
-   ```bash
-
-   # Create .env file and add your Google Gemini API key      cd server; npm install
-
-   echo "VITE_API_KEY=your_gemini_api_key_here" > .env
-
-   ```    - Start the server:
-
-
-
-4. **Start the development servers**      npm start
-
-   
-
-   **Terminal 1 - Backend Server:**    - Set Vite env `VITE_API_BASE` to `http://localhost:4000` to make the frontend call the demo server.
-
-   ```bash
-
-   cd server    The server seeds two users: `manufacturer` and `vendor` (password `pass123`). This server is for local development only.
-
-   npm start    languageOptions: {
-
-   ```      parserOptions: {
-
-           project: ['./tsconfig.node.json', './tsconfig.app.json'],
-
-   **Terminal 2 - Frontend Development Server:**        tsconfigRootDir: import.meta.dirname,
-
-   ```bash      },
-
-   npm run dev      // other options...
-
-   ```    },
-
-  },
-
-5. **Access the application**])
-
-   - Frontend: http://localhost:3000```
-
-   - Backend API: http://localhost:4000
-
-### Default Login Credentials
-- **Manufacturer**: username: `manufacturer`, password: `pass123`
-- **Vendor**: username: `vendor`, password: `pass123`
-
-## 📁 Project Structure
-
-```
-intelligent-production-system/
-├── components/                 # React components
-│   ├── common/                # Reusable UI components
-│   ├── Dashboard.tsx          # Main dashboard
-│   ├── Login.tsx              # Authentication
-│   └── ...                    # Feature-specific components
-├── services/                  # API services
-│   ├── auth.ts               # Authentication service
-│   └── geminiService.ts      # AI service integration
-├── server/                   # Backend server
-│   ├── index.js             # Express server
-│   ├── db.js                # Database setup
-│   └── ...                  # Server utilities
-├── src/                     # Main application
-│   ├── App.tsx              # Root component
-│   ├── AuthContext.tsx      # Authentication context
-│   └── ...                  # App configuration
-├── data/                    # Mock data and samples
-├── types.ts                 # TypeScript type definitions
-└── package.json            # Dependencies
-```
-
-## 🔧 Configuration
-
-### Google Gemini API Setup
-1. Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Add it to your `.env` file:
-   ```env
-   VITE_API_KEY=your_api_key_here
-   ```
-
-### Database Configuration
-The system supports both SQLite (default) and MySQL:
-
-**SQLite (Development):**
-- No additional setup required
-- Data stored in `server/server.sqlite`
-
-**MySQL (Production):**
-1. Create `.env` file in the `server/` directory
-2. Configure database connection:
-   ```env
-   MYSQL_HOST=localhost
-   MYSQL_USER=your_username
-   MYSQL_PASSWORD=your_password
-   MYSQL_DATABASE=ips_db
-   ```
-
-## 🎯 User Roles & Features
-
-### Manufacturer Dashboard
-- Production KPI monitoring
-- Anomaly detection and alerts
-- Root cause analysis
-- Vendor performance analytics
-- Price simulation tools
-- Sustainability metrics
-
-### Vendor Dashboard
-- Performance tracking
-- Feedback submission system
-- Production insights
-- Quality metrics
-- Communication tools
-
-## 🔒 Authentication
-
+Intelligent Production Management System
+An advanced real-time production management system powered by AI-driven insights from Google Gemini. Monitor live KPIs, detect anomalies, perform root cause analysis, and simulate market strategies to optimize production and market position.
+
+Table of contents
+
+Features
+Tech stack
+Quick start
+Project structure
+Configuration
+User roles
+Authentication
+AI features
+Deployment
+Contributing
+License
+
+
+🌟 Features
+AI-powered analytics
+
+Anomaly detection — real-time detection of unusual patterns in production data using Google Gemini
+Root cause analysis — AI-driven insights to identify underlying causes of performance issues
+Predictive analytics — forecast production trends and potential issues before they occur
+Sentiment analysis — analyze customer feedback and vendor communications automatically
+
+Production monitoring
+
+Real-time KPI dashboard — live monitoring of key performance indicators
+Interactive data visualization — charts and graphs powered by Recharts
+Multi-role access — separate dashboards for manufacturers and vendors
+
+Advanced capabilities
+
+Price simulation — predict market impact of pricing changes
+Competitive analysis — track competitor pricing and market share
+Sustainability metrics — monitor energy usage and environmental impact
+
+
+🛠 Tech stack
+LayerTechnologyFrontendReact 19, TypeScript 5, Tailwind CSS 4Build toolVite 7ChartsRecharts 3BackendNode.js 20, ExpressDatabaseSQLite (development) / MySQL (production)AIGoogle Gemini API (@google/genai)AuthJWT, bcrypt, HTTP-only cookies
+
+🚀 Quick start
+Prerequisites
+
+Node.js 18 or higher
+npm
+A Google Gemini API key
+Git
+
+Installation
+1. Clone the repository
+bashgit clone https://github.com/Kbhavana001/Intelligent-production-management-system.git
+cd Intelligent-production-management-system
+2. Install frontend dependencies
+bashnpm install
+3. Install backend dependencies
+bashcd server
+npm install
+cd ..
+4. Set up environment variables
+Create a .env file in the project root:
+envVITE_API_KEY=your_gemini_api_key_here
+5. Start the backend server (Terminal 1)
+bashcd server
+npm start
+6. Start the frontend dev server (Terminal 2)
+bashnpm run dev
+7. Open the app
+
+Frontend: http://localhost:3000
+Backend API: http://localhost:4000
+
+Default login credentials
+RoleUsernamePasswordManufacturermanufacturerpass123Vendorvendorpass123
+
+These credentials are for local development only.
+
+
+📁 Project structure
+intelligent-production-management-system/
+├── components/                  # React UI components
+│   ├── common/                  # Reusable UI components
+│   ├── Dashboard.tsx            # Main dashboard
+│   ├── Login.tsx                # Authentication screen
+│   ├── AnomalyDetection.tsx     # Anomaly detection panel
+│   ├── PriceSimulation.tsx      # Price simulation tool
+│   ├── SentimentAnalysis.tsx    # Sentiment analysis panel
+│   └── VendorDashboard.tsx      # Vendor-specific dashboard
+├── services/                    # API and AI service layer
+│   ├── auth.ts                  # Authentication service
+│   └── geminiService.ts         # Google Gemini AI integration
+├── server/                      # Node.js backend
+│   ├── index.js                 # Express server entry point
+│   ├── db.js                    # Database setup (SQLite/MySQL)
+│   └── ...                      # Auth middleware, routes
+├── src/                         # App entry point
+│   ├── App.tsx                  # Root component
+│   ├── AuthContext.tsx          # Authentication context
+│   └── main.tsx                 # Vite entry point
+├── data/                        # Mock production data
+├── public/                      # Static assets
+├── types.ts                     # TypeScript type definitions
+├── index.html                   # HTML entry point
+├── vite.config.ts               # Vite configuration
+├── tailwind.config.js           # Tailwind CSS configuration
+└── package.json                 # Frontend dependencies
+
+🔧 Configuration
+Google Gemini API setup
+
+Get your API key from Google AI Studio
+Create a .env file in the project root and add:
+
+envVITE_API_KEY=your_api_key_here
+Database configuration
+The system supports SQLite for development and MySQL for production.
+SQLite (default — no setup required)
+Data is stored automatically in server/server.sqlite.
+MySQL (production)
+Create a .env file inside the server/ directory:
+envMYSQL_HOST=localhost
+MYSQL_USER=your_username
+MYSQL_PASSWORD=your_password
+MYSQL_DATABASE=ips_db
+
+🎯 User roles & features
+Manufacturer dashboard
+
+Production KPI monitoring
+Anomaly detection and real-time alerts
+Root cause analysis
+Vendor performance analytics
+Price simulation tools
+Sustainability and energy metrics
+Competitive market analysis
+
+Vendor dashboard
+
+Performance tracking
+Feedback submission system
+Production insights
+Quality metrics
+Communication tools
+
+
+🔒 Authentication
 The system includes a complete authentication system with:
-- User registration and login
-- Role-based access control (Manufacturer/Vendor)
-- Secure password hashing with bcrypt
-- JWT token-based sessions
-- HTTP-only cookies for security
 
-## 📊 AI Features
+User registration and login
+Role-based access control (Manufacturer / Vendor)
+Secure password hashing with bcrypt
+JWT token-based sessions
+HTTP-only cookies for security
 
-### Anomaly Detection
+
+📊 AI features
+Anomaly detection
 Automatically identifies unusual patterns in:
-- Revenue fluctuations
-- Return rate spikes
-- Production anomalies
-- Quality issues
 
-### Root Cause Analysis
+Revenue fluctuations
+Return rate spikes
+Production batch anomalies
+Quality issues
+
+Root cause analysis
 AI-powered analysis of:
-- Performance degradation causes
-- Regional performance variations
-- Vendor-specific issues
-- Channel performance problems
 
-### Sentiment Analysis
+Performance degradation causes
+Regional performance variations
+Vendor-specific issues
+Channel performance problems
+
+Sentiment analysis
 Analyzes customer feedback to:
-- Categorize feedback sentiment
-- Identify key themes
-- Track satisfaction trends
-- Generate actionable insights
+
+Categorize feedback sentiment (positive / neutral / negative)
+Identify recurring themes
+Track satisfaction trends over time
+Generate actionable insights
+
+Price simulation
+
+Predicts sales and revenue impact of price changes
+Returns confidence score and AI reasoning
+Supports market strategy planning
 
 
+🚀 Deployment
+Frontend (Vercel / Netlify)
+bashnpm run build
+Deploy the generated dist/ folder and set the VITE_API_KEY environment variable in your hosting platform's settings.
+Backend (Heroku / Railway / Render)
+Deploy the server/ directory and set the following environment variables:
+envMYSQL_HOST=...
+MYSQL_USER=...
+MYSQL_PASSWORD=...
+MYSQL_DATABASE=...
 
-### Building for Production
-```bash
-# Build frontend
-npm run build
+🤝 Contributing
 
-# Start production server
-npm run preview
-```
+Fork the repository
+Create a feature branch: git checkout -b feature/your-feature-name
+Commit your changes: git commit -m 'Add your feature'
+Push to the branch: git push origin feature/your-feature-name
+Open a Pull Request
 
-### Code Style
-- ESLint configuration included
-- TypeScript strict mode enabled
-- Prettier for code formatting
 
-## 🚀 Deployment
+📝 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### Frontend Deployment (Vercel/Netlify)
-1. Build the project: `npm run build`
-2. Deploy the `dist/` folder
-3. Set environment variables in your hosting platform
+🙏 Acknowledgments
 
-### Backend Deployment (Heroku/Railway)
-1. Deploy the `server/` directory
-2. Set production environment variables
-3. Configure database connection
+Google Gemini AI for AI capabilities
+React for the UI framework
+Tailwind CSS for styling
+Recharts for data visualization
+Vite for the build tooling
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Google Gemini AI](https://ai.google.dev/) for AI capabilities
-- [React](https://reactjs.org/) for the UI framework
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [Recharts](https://recharts.org/) for data visualization
-- [Vite](https://vitejs.dev/) for build tooling
-
-## 📞 Support
-
-For questions and support:
-- Create an issue on GitHub
-- Email: [your-email@example.com]
-- Documentation: [Project Wiki](../../wiki)
-
----
 
 Built with ❤️ for intelligent production management
