@@ -72,11 +72,6 @@ export interface VendorFeedback {
     negativeThemes: string[];
 }
 
-export interface ChatMessage {
-  role: 'user' | 'model';
-  text: string;
-}
-
 export interface VendorSubmittedFeedback {
   vendorName: string;
   productId: string;

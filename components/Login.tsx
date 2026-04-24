@@ -14,20 +14,6 @@ export const Login: React.FC = () => {
   const [displayName, setDisplayName] = useState('');
   const [role, setRole] = useState<'manufacturer' | 'vendor'>('manufacturer');
 
-  const handleRoleQuick = async (roleParam: 'manufacturer' | 'vendor') => {
-    setError(null);
-    setLoading(true);
-    try {
-      // demo shortcut uses seeded credentials handled in auth.loginWithRole
-      const authSvc = await import('../services/auth');
-      await authSvc.auth.loginWithRole(roleParam);
-    } catch (e: any) {
-      setError(e?.message ?? 'Login failed');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleSubmit = async (e?: React.FormEvent) => {
     e?.preventDefault();
     setError(null);
@@ -89,12 +75,6 @@ export const Login: React.FC = () => {
 
             <div className="flex gap-2">
               <button type="submit" className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg" disabled={loading}>{loading ? 'Working...' : (mode==='login'?'Login':'Signup')}</button>
-            </div>
-
-            <div className="mt-2 text-sm text-gray-400">Or use quick demo buttons:</div>
-            <div className="flex gap-2">
-              <button type="button" onClick={()=>handleRoleQuick('manufacturer')} className="flex-1 bg-blue-500 py-2 rounded">Demo Manufacturer</button>
-              <button type="button" onClick={()=>handleRoleQuick('vendor')} className="flex-1 bg-gray-600 py-2 rounded">Demo Vendor</button>
             </div>
 
             {error && <div className="text-red-400 text-sm mt-2">{error}</div>}

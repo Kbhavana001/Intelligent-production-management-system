@@ -23,26 +23,24 @@ export const Dashboard: React.FC<DashboardProps> = ({ data }) => {
   return (
     <div className="space-y-6">
       <KpiGrid data={data} />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2 space-y-6">
+           <RevenueChart data={data} />
+           <CompetitiveChart data={data} />
+        </div>
+        <div className="space-y-6">
+            <RecommendationsPanel data={data} />
+        </div>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <RevenueChart data={data} />
-        <CompetitiveChart data={data} />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <SentimentAnalysis data={data} />
-        <PricingSimulator data={data} />
-      </div>
-      <div className="grid grid-cols-1 gap-6">
-        <RecommendationsPanel data={data} />
-      </div>
-      <div className="grid grid-cols-1">
-        <AnomalyPanel data={data} />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <SentimentAnalysis data={data} />
         <PricingSimulator data={data} />
       </div>
       <div className="grid grid-cols-1">
         <SustainabilityMetrics data={data} />
+      </div>
+      <div className="grid grid-cols-1">
+        <AnomalyPanel data={data} />
       </div>
     </div>
   );

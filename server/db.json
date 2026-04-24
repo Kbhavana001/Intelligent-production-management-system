@@ -47,6 +47,86 @@
       "role": "manufacturer",
       "display_name": "teju",
       "created_at": 1760457752640
+    },
+    {
+      "id": "cc8e7907-5245-4200-8583-4dc0fcbd7040",
+      "username": "anshu",
+      "password_hash": "$2a$08$47ei.jTL/YImIbNIm7XRSO7eS3vsmZWUnxzAVP9Lovi00HNIBvSBm",
+      "role": "manufacturer",
+      "display_name": "anshuu",
+      "created_at": 1760688580562
+    },
+    {
+      "id": "244bcc95-fcb1-4281-a06a-478611b82a02",
+      "username": "sita",
+      "password_hash": "$2a$08$1XkH4FVbvHh5Gl4hi0k2x.ziGmX6j/XfiHLTRgeogzGBvPyWE6Ff2",
+      "role": "manufacturer",
+      "display_name": "sitaa",
+      "created_at": 1760690536335
+    },
+    {
+      "id": "f14ee9a2-bfdb-4f14-bcce-df3057e0790e",
+      "username": "hello",
+      "password_hash": "$2a$08$8gKitik4Sv.SRJBaJzeDz.QAlYQXg.Q5DFnX5b7PLSjpEmdH59d8q",
+      "role": "manufacturer",
+      "display_name": "helllo",
+      "created_at": 1760723171676
+    },
+    {
+      "id": "a70a6f7c-7677-4564-80c9-433895e7ddd2",
+      "username": "sai",
+      "password_hash": "$2a$08$UaF9i0DPWvzovmtP9nfU9eJ3joqXFHzGHv7ZYAy9Sw/nrqKLfv7fK",
+      "role": "vendor",
+      "display_name": "sai",
+      "created_at": 1774625975387
+    },
+    {
+      "id": "71667179-336a-4f58-8204-8a0036ce5794",
+      "username": "bhavana",
+      "password_hash": "$2a$08$Ulrookk4cB6Tutzno/pFaOiQbbylrpLmlcz85yKqtJmFGzpSsMEl6",
+      "role": "manufacturer",
+      "display_name": "bhavs",
+      "created_at": 1774673341549
+    },
+    {
+      "id": "522a508d-6c3e-4384-86c1-c7b951598696",
+      "username": "abc",
+      "password_hash": "$2a$08$Uca8DIGrkmyhetgKDS4sO.MXC4OzHHkhIjVThYY6mjTIWvqInXtnC",
+      "role": "vendor",
+      "display_name": "abc",
+      "created_at": 1774675197533
+    },
+    {
+      "id": "9257263a-2c82-48b6-b747-00e31f43bf3c",
+      "username": "def",
+      "password_hash": "$2a$08$gN0vmmdTBm/gubJB3CpjKOZO/DOoTnXjernvL4g7/SYkblDiKBfs.",
+      "role": "manufacturer",
+      "display_name": "def",
+      "created_at": 1774690397044
+    },
+    {
+      "id": "a3231a2c-cdf9-461d-91e5-372d6dac5d38",
+      "username": "xyz",
+      "password_hash": "$2a$08$hFeKpPEFsnVKgmwrFw1tieBm/3682r/raDYipqsiKiB4Wp1lGVP92",
+      "role": "manufacturer",
+      "display_name": "xyz",
+      "created_at": 1774692101364
+    },
+    {
+      "id": "ffef7fb2-013a-4d6c-84f1-6ca1e41351b4",
+      "username": "Vendor1",
+      "password_hash": "$2a$08$jjcygzbsq.5HGkau/G8fde89HTOOV6q7jTT1.YFo4ZXcvEOP16MOu",
+      "role": "vendor",
+      "display_name": "Vendor14",
+      "created_at": 1777014651178
+    },
+    {
+      "id": "5c2750f2-2ba3-4250-8e91-2d7fa0922764",
+      "username": "Bhavana14",
+      "password_hash": "$2a$08$3igWHHRMKRQmlq62Mdbh5OZ/UjK76mbg0Ar90oD04LzfOXaB4M3N2",
+      "role": "manufacturer",
+      "display_name": "Bhavana145",
+      "created_at": 1777014793520
     }
   ]
 }

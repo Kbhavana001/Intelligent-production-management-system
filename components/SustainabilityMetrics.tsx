@@ -54,7 +54,7 @@ export const SustainabilityMetrics: React.FC<SustainabilityMetricsProps> = ({ da
       <CardHeader title="Sustainability & Quality Metrics" description="Tracking performance beyond the balance sheet" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
         {metrics.map(metric => (
-          <div key={metric.name} className="bg-gray-700/50 p-4 rounded-lg flex items-center gap-4 group relative w-full">
+          <div key={metric.name} className="bg-gray-700/50 p-4 rounded-lg flex items-center gap-4 group relative">
             <div>{metric.icon}</div>
             <div>
                 <p className="text-sm text-gray-400">{metric.name}</p>

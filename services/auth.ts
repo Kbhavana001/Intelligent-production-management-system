@@ -34,13 +34,6 @@ export const auth = {
     return body as User;
   },
 
-  loginWithRole: async (role: UserRole): Promise<User> => {
-    // For demo compatibility: use pre-seeded usernames
-    const username = role === 'manufacturer' ? 'manufacturer' : 'vendor';
-    // default password for seeded users
-    return auth.loginWithCredentials(username, 'pass123');
-  },
-
   signup: async (username: string, password: string, role: UserRole, displayName?: string): Promise<User> => {
     const res = await fetch(`${API_BASE}/api/auth/signup`, {
       method: 'POST',
