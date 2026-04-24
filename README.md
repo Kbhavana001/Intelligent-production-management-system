@@ -268,17 +268,7 @@ Analyzes customer feedback to:
 - Track satisfaction trends
 - Generate actionable insights
 
-## 🛠️ Development
 
-### Running Tests
-```bash
-# Frontend tests
-npm test
-
-# Backend API tests
-cd server
-npm test
-```
 
 ### Building for Production
 ```bash
