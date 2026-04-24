@@ -106,6 +106,7 @@ intelligent-production-management-system/
 ├── tailwind.config.js           # Tailwind CSS configuration
 └── package.json                 # Frontend dependencies
 
+
 🔧 Configuration
 Google Gemini API setup
 
