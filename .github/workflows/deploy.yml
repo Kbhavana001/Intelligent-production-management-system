@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: Deploy Intelligent Production Management System
 
 on:
   push:
@@ -13,7 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy files to Nginx
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Vite app
+        run: npm run build
+
+      - name: Deploy dist to Nginx
         run: |
-          sudo rsync -av --delete ./ /var/www/html/
-``
+          sudo rm -rf /var/www/html/*
+          sudo cp -r dist/* /var/www/html/
